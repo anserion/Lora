@@ -1,0 +1,142 @@
+object Form1: TForm1
+  Left = 280
+  Height = 302
+  Top = 154
+  Width = 444
+  BorderStyle = bsDialog
+  Caption = 'Ключ для замка с нулевым разглашением'
+  ClientHeight = 302
+  ClientWidth = 444
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object BTN_green_code: TButton
+    Left = 6
+    Height = 25
+    Top = 104
+    Width = 129
+    Caption = 'Зеленый код'
+    Color = clGreen
+    Font.Height = -16
+    Font.Name = 'Sans'
+    OnClick = BTN_green_codeClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BTN_yellow_code: TButton
+    Left = 6
+    Height = 25
+    Top = 152
+    Width = 126
+    Caption = 'Желтый код'
+    Color = clYellow
+    Font.Height = -16
+    Font.Name = 'Sans'
+    OnClick = BTN_yellow_codeClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BTN_red_code: TButton
+    Left = 6
+    Height = 25
+    Top = 200
+    Width = 126
+    Caption = 'Красный код'
+    Color = clRed
+    Font.Height = -16
+    Font.Name = 'Sans'
+    OnClick = BTN_red_codeClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 144
+    Height = 240
+    Top = 56
+    Width = 296
+    Font.Height = -11
+    Font.Name = 'Sans'
+    Lines.Strings = (
+      'Программа Lora_key'
+      '(ключ для замка с нулевым разглашением)'
+      ''
+      '1. Проверить секреты ключа (если необходимо)'
+      '   - включить флажок "показать секреты ключа"'
+      '   - исправить секреты на нужные значения'
+      '      первое и второе поля - простые числа (1-99)'
+      '      третье поле - натуральное число (1-99)'
+      '   - нажать кнопку OK.'
+      '2. Запустить программу замка с нулевым'
+      '   разглашением Lora_pad (если выключена)'
+      '3. По запросу программы Lora_pad нажимать'
+      '   кнопки кодов (зеленый, желтый, красный)'
+      '   и вводить в программу Lora_pad коды'
+      ''
+      'Автор проекта'
+      'к.ф.-м.н. Ионисян А.С. (anserion@gmail.com)'
+      'Лицензия ПО - Apache 2.0 (Свободное ПО)'
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object CB_show_secret: TCheckBox
+    Left = 8
+    Height = 24
+    Top = 0
+    Width = 195
+    Caption = 'Показать секреты ключа'
+    OnChange = CB_show_secretChange
+    TabOrder = 4
+  end
+  object Edit_p_secret: TEdit
+    Left = 8
+    Height = 28
+    Top = 24
+    Width = 80
+    TabOrder = 5
+    Text = '******'
+  end
+  object Edit_q_secret: TEdit
+    Left = 104
+    Height = 28
+    Top = 24
+    Width = 80
+    TabOrder = 6
+    Text = '******'
+  end
+  object Edit_s_secret: TEdit
+    Left = 200
+    Height = 28
+    Top = 24
+    Width = 80
+    TabOrder = 7
+    Text = '******'
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 20
+    Top = 277
+    Width = 62
+    Caption = 'ID ключа'
+    ParentColor = False
+  end
+  object Edit_key_id: TEdit
+    Left = 55
+    Height = 28
+    Top = 269
+    Width = 80
+    ReadOnly = True
+    TabOrder = 8
+    Text = '00770015'
+  end
+  object BTN_reconfigure: TButton
+    Left = 296
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'OK'
+    OnClick = BTN_reconfigureClick
+    TabOrder = 9
+  end
+end
